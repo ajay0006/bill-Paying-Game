@@ -4,7 +4,8 @@ import Stage1 from "./components/stage1";
 import Stage2 from "./components/stage2";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'normalize.css/normalize.css';
-import './styles/styles.scss'
+import './styles/styles.scss';
+//import './styles/fullStyle.css';
 
 
 const App = () => {

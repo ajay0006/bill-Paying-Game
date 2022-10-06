@@ -51,29 +51,32 @@ const Stage1 = () => {
                 </FormGroup>
                 {
                     error[0] ?
-                        <Alert className='mt-2'>
+                        <Alert variant='danger' className='mt-2'>
                             {error[1]}
                         </Alert>
                         : null
                 }
-                <Button className='playerBtn mt-2' variant="primary" type='submit'> Add Player</Button>
-
+                <Button className='miami mt-2' variant="primary" type='submit'> Add Player</Button>
                 {
                     context.state.players && context.state.players.length > 0 ?
                         <>
                             <hr/>
                             <div>
                                 <ul className='list-group'>
-                                    {context.state.players.map((player) => (
-                                        <li key={uuidV4()} className="list-group-item d-flex, justify-content-between align-items-center list-group-item-action">
+                                    {context.state.players.map((player, index) => (
+                                        <li key={uuidV4()} className="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                                             {player}
-                                            <span className='badge badge-danger' onClick={() => {}}>
+                                            <span className='badge badge-danger' onClick={() => context.removePlayer(index)}>
                                                 x
                                             </span>
                                         </li>
                                     ))}
 
                                 </ul>
+
+                                <div className='action_button' onClick={() => alert('Stage 2')}>
+                                        Next
+                                </div>
                             </div>
                         </>
 
