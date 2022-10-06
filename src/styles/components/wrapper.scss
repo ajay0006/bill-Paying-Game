@@ -1,0 +1,26 @@
+.wrapper {
+  height:100vh;
+  display: grid;
+}
+.center-wrapper {
+  align-self: center;
+  justify-self: center;
+}
+
+.players_wrapper {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.result_wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.result_wrapper h3 {
+  color: #41b6e6;
+}
+.result_wrapper div {
+  font-size: 40px;
+  color: #585858;
+}
