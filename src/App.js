@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 //import './styles/fullStyle.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 const App = () => {
