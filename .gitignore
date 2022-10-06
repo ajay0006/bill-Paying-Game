@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# directory
+idea/
+.idea/
+.idea
+
 # testing
 /coverage
 
@@ -22,5 +27,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-#directory
-idea/
