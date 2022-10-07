@@ -10,11 +10,13 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 const App = () => {
+    // retrieves the state and functions from the MyProvider component using MyContext
     const context = useContext(MyContext)
 
     return (
         <div className="wrapper">
             <div className="center-wrapper">
+
                 <h1> Who pays the bill</h1>
                 {context.state.stage === 1 ?
                 <Stage1/>

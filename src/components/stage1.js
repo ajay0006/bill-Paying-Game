@@ -4,27 +4,36 @@ import {Alert, Button, Form, FormControl, FormGroup} from "react-bootstrap";
 import {v4 as uuidV4} from 'uuid';
 
 const Stage1 = () => {
+    // another way of using the event handler in form submissions
     const textPlayerInput = useRef();
+    // just another grab of the context
     const context = useContext(MyContext)
+    // setting the state that will be used on this page, for the error handling
     const [error, setError] = useState([false, ""])
 
     useEffect(() => {
-        console.log(context.state.players)
+        //console.log(context.state.players)
     });
 
     const handleSubmit = (e) => {
+        // prevents default js, where page loads with every click
         e.preventDefault();
-        const textInput = textPlayerInput.current.value;
+        // trim whitespaces
+        let textInput = textPlayerInput.current.value.trim();
+        // validate the text entered by the user
         const validate = validateTextPlayerInput(textInput);
 
+        // if validation passes
         if (validate) {
             setError([false, ''])
-            context.addPlayer(textInput)
+            context.addPlayer(textInput= textInput[0].toUpperCase() + textInput.substring(1))
             textPlayerInput.current.value = "";
         }
     }
 
+    // validation of user input for blanks, < 2 chars and duplicates
     const validateTextPlayerInput = (textInput) => {
+        textInput = textInput[0].toUpperCase() + textInput.substring(1)
         if (textInput === "") {
             setError([true, 'Naa Mate you know blanks arent allowed'])
             return false
@@ -33,7 +42,10 @@ const Stage1 = () => {
             setError([true, 'why just two character? do better'])
             return false
         }
-
+        if (context.state.players.indexOf(textInput) > -1) {
+            setError([true, 'No duplicates allowed!!!'])
+            return false
+        }
         return true
     }
 
